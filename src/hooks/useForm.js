@@ -9,9 +9,14 @@ const useForm = (callback) => {
 
 
     const handleSubmit = (event) => {
-        if (event) {
-            event.preventDefault()
-            callback(values.name, values.year, values.author, values.description)
+        if (values.name) {
+            if (event) {
+                event.preventDefault()
+                callback(values.name, values.year, values.author, values.description)
+            }
+        }
+        else {
+            alert("Book name cannot be empty!")
         }
     }
 

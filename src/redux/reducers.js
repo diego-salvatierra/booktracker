@@ -131,7 +131,7 @@ function bookApp(state = initialState, action) {
           books: state.books.map((book) => {
             console.log("properties to filter are ", book)
             console.log("action.name ", action.name)
-            var properties = book.name.concat(book.year, book.author, book.description) 
+            var properties = book.name.concat(book.year, book.author, book.description)
             if (properties.includes(action.name) === false) {
               console.log(book.name, " has been hidden!")
               return Object.assign({}, book, {                

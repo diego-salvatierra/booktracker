@@ -23,12 +23,17 @@ function AddBookForm ({addNewBook}) {
             handleSubmit(e)
             //input.value = ''
         }}>
-      <input className='input' name='name' placeholder = 'Name' value= {values.name} onChange = {handleChange} onSubmit = {handleClear}/>
+      <div className='searchBlock'>
+        <div className='fixed wrapper block'><input className='input' name='name' placeholder = 'Name' value= {values.name} onChange = {handleChange} onSubmit = {handleClear}/>
+        
       <input className='input' name='year' placeholder = 'Year' value= {values.year} onChange = {handleChange}/>
       <input className='input' name='author' placeholder = 'Author' value= {values.author} onChange = {handleChange}/>
       <input className='input' name='description' placeholder = 'Description' value= {values.description} onChange = {handleChange}/>
-      <input type='submit' value='Add Book'/>
-      <button className="Button" value='Reset Form' onClick={handleClear}/>
+      <button className="block" onClick={handleSubmit}>Add book</button>
+      </div>
+      </div>
+
+      
     </form>    
     )}
 
@@ -37,3 +42,5 @@ export default AddBookForm
 /*ref={node => {
         input = node 
       }} */
+
+// <button className="Button" value='Reset Form' onClick={handleClear}/>

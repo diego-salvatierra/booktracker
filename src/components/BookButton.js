@@ -1,5 +1,6 @@
 import React from 'react'
-//import 'bulma/css/bulma.css'
+import CustomProperties from 'react-custom-properties';
+import 'bulma/css/bulma.css'
 
 
 const BookButton = ({read, id, onRead, killBook, changeBook}) => {
@@ -7,9 +8,13 @@ const BookButton = ({read, id, onRead, killBook, changeBook}) => {
     if (read) {
         return (
             <div className='tile'>
-            <div className='box'>Read</div>
-            <button className="button is-danger is-rounded" onClick={() => killBook()}>Discard it</button>
-            <button className="button is-info is-rounded" onClick={() => changeBook()}>Edit info</button>
+            <div className='fixed block'>Read</div>
+            <CustomProperties properties={{'--block-background-color': '#f6625d'}}>
+            <button className="block" onClick={() => killBook()}>Discard it</button>
+            </CustomProperties>            
+            <CustomProperties properties={{'--block-background-color': '#2c98f0'}}>
+            <button className="block" onClick={() => changeBook()}>Edit info</button>
+            </CustomProperties>            
             </div>
         )
     }   
@@ -17,13 +22,19 @@ const BookButton = ({read, id, onRead, killBook, changeBook}) => {
     else {
         return (
         <div className='tile'>
-            <div className='box'>Not Read</div>
+            <div className='fixed block'>Not Read</div>
             {console.log("onRead is ", onRead)}
             {console.log("key is ", id)}
             <br></br>
-            <button className="button is-success is-rounded" onClick={() => onRead()}>I read it!</button>
-            <button className="button is-danger is-rounded" onClick={() => killBook()}>Discard it</button>
-            <button className="button is-info is-rounded" onClick={() => changeBook()}>Edit info</button>
+            <CustomProperties properties={{'--block-background-color': '#00ae86'}}>
+            <button className="block" onClick={() => onRead()}>I read it!</button>
+            </CustomProperties>
+            <CustomProperties properties={{'--block-background-color': '#f6625d'}}>
+            <button className="block" onClick={() => killBook()}>Discard it</button>
+            </CustomProperties>
+            <CustomProperties properties={{'--block-background-color': '#2c98f0'}}>
+            <button className="block" onClick={() => changeBook()}>Edit info</button>
+            </CustomProperties>
         </div>              
     )}
 }

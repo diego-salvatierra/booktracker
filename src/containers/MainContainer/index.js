@@ -19,6 +19,7 @@ function MainContainer (props) {
       <div>
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
       </div>
+      <h1 style={{fontWeight:900, fontSize:"5vw"}}>BookTracker 📚</h1>
       <BookFilters/>
       <ListView/>
       <AddBook/>    
