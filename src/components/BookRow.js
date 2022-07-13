@@ -8,7 +8,7 @@ const BookRow = ({name, year, author, description, read, show, id, onRead, killB
     // If book is not hidden by filter
     if (show) { 
         return (
-            <article className='card'>
+            <article className='card fixed block'>
                 <li className='card-header subtitle'>{name}</li>
                 <li>{year}</li>
                 <li>{author}</li>

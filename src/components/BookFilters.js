@@ -21,10 +21,15 @@ import { changeFilterName } from '../redux/actions'
 }*/
 
 const BookFilters = (props) => (
-    <div><input className='input' type='text' placeholder='Filter your books...'  
+    <div className='searchBlock'>
+        <div className='fixed wrapper block'>
+            <input className='input' type='text' placeholder='Filter your books...'  
         onChange={(e) => {
             props.dispatch(changeFilterName(e.target.value))
-        }}></input>
+        }}>
+
+            </input>
+        </div>
     </div>    
 )
 
